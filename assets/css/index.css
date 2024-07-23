@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    font-family: "Nunito", sans-serif;;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+:root{
+    --blue:#008193;
+    --green:#004a5f;
+}
+
+
+/* navbar */
+.transition-opacity {
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+.bg-transparent {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bg-white {
+    background-color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .text-gray {
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+  }
+  
+  .text-black {
+    color: black;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+
+  /* about */
+/* Section title */
+#about-us h2 {
+  font-family: 'Monument', sans-serif;
+  margin-bottom: 1rem;
+}
+
+#about-us hr {
+  margin-bottom: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Icons in headers */
+#about-us h3 img {
+  margin-right: 1rem;
+}
+
+/* Text alignment */
+#about-us p,
+#about-us ul {
+  text-align: center;
+}
+
+/* List styles */
+#about-us ul {
+  padding-left: 1rem;
+}
+
+#about-us ul li {
+  text-align: left;
+}
+
+/* Icon size and margin */
+#about-us ul li img {
+  margin-right: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1024px) {
+  #about-us .flex-col {
+      flex-direction: row;
+  }
+
+  #about-us .text-left {
+      text-align: left;
+  }
+
+  #about-us ul {
+      text-align: left;
+  }
+}
+
+
+
+
+  /* motion */
+
+  /* Initial styles for animation */
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px; /* Sesuaikan ukuran sesuai kebutuhan */
+    margin-bottom: 2rem;
+    border: 4px solid #e5e7eb;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.05);
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 16px;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.image-container:hover .text-overlay {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.text-overlay h1 {
+    font-family: 'Monument', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.text-overlay p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+}
+
+
+  
+
+
+   /* General styling for the FAQ section */
+  /* FAQ Item */
+  .faq-item {
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* FAQ Question */
+.faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f1f1f1;
+}
+
+/* FAQ Answer */
+.faq-answer {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    display: none; /* Hide answer by default */
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Active state for expanded FAQ */
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+@media (max-width: 480px) {
+    #faq {
+        padding: 2rem 1rem;
+    }
+
+    #faq h2 {
+        font-size: 1.75rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+    }
+
+    .faq-form {
+        padding: 1rem;
+    }
+}
+  
